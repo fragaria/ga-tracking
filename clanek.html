@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="cs">
+	<head>
+		<meta charset="utf-8"/>
+		<title>Trackovani - test site</title>
+	</head>
+	<body>
+		<h1>Testovani tracking</h1>
+		<ul data-tracking="navigation">
+			<li><a href="index.html">Navigace polozka 1</a></li>
+			<li><a href="index.html">Navigace polozka 2</a></li>
+			<li><a href="index.html">Navigace polozka 3</a></li>
+			<li><a href="index.html">Navigace polozka 4</a></li>
+			<li><a href="index.html">Navigace polozka 5</a></li>
+			<li><a href="index.html">Navigace polozka 6</a></li>
+		</ul>
+		
+		<a href="index.html" data-tracking="more">Dalsi odkaz</a>
+        <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+        <script src="tracking.jquery.js"/></script>
+        <script>
+        $(document).ready(function() {
+            window.tracking.initTracking({
+                account: 'UA-9784905-21',
+                domainName: 'none',
+                currentPage: 'article',
+                modules: ['trackPageview', 'trackForms', 'trackOutboundLinks', 'trackMaxScroll', 'trackDownloads', 'trackYoutube', 'trackVimeo', 'trackMailto', 'trackBrowse'],
+                debug: false
+            });
+        });
+        </script>
+	</body>
+</html>

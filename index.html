@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="cs" xmlns="http://www.w3.org/1999/html">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Trackovani - test site</title>
+    </head>
+    <body>
+        <h1>TODO</h1>
+
+        <ol>
+            <li>Full example: homepage, article, category</li>
+            <li>Testovat</li>
+            <li>Nasadit Fragaria</li>
+            <li>Facebook, Twitter vyřešit</li>
+            <li>make sure that _gaq is ready, if not redirect right away</li>
+        </ol>
+
+        <div role="banner" data-tracking="logo">
+            <a href="#">Logo</a>
+        </div>
+
+        <nav data-tracking="navigation">
+            <ul>
+                <li><a href="clanek.html">Navigace polozka 1</a></li>
+                <li><a href="clanek.html">Navigace polozka 2</a></li>
+                <li><a href="clanek.html">Navigace polozka 3</a></li>
+                <li><a href="clanek.html">Navigace polozka 4</a></li>
+                <li><a href="clanek.html">Navigace polozka 5</a></li>
+                <li><a href="clanek.html">Navigace polozka 6</a></li>
+            </ul>
+        </nav>
+
+        <section data-tracking="content">
+            <h1>Heading</h1>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a cursus felis. Cras egestas pharetra est id imperdiet. Nulla varius libero vel felis iaculis vitae placerat tortor cursus. Sed vitae ligula nec eros pulvinar gravida vitae vel est. Aenean aliquet posuere vulputate. Donec ligula sem, vestibulum id dapibus a, lobortis nec ante. Nam sapien sapien, condimentum et varius a, rhoncus et felis. Sed arcu nulla, congue non convallis a, mollis a felis. Pellentesque orci massa, accumsan id aliquam quis, consequat non justo. Etiam eu tortor nec ligula aliquet hendrerit sed a mi. Cras sollicitudin vehicula fringilla. Duis id dui vitae dolor luctus faucibus eu non ipsum.
+            <h2><a href="clanek.html">Heading 2</a></h2>
+            Duis feugiat mollis imperdiet. Praesent ut dictum elit. Mauris varius pulvinar convallis. In dapibus massa eu sem dignissim et tincidunt mauris mollis. Maecenas felis turpis, luctus id dignissim non, tristique in augue. Cras gravida venenatis urna nec volutpat. Praesent viverra consequat dolor vitae lacinia. Pellentesque id ante id risus adipiscing ornare sit amet eu est.
+            <h2><a href="http://www.centrum.cz">Centrum.cz</a></h2>
+            Morbi aliquam ligula sit amet augue euismod congue. Nam pharetra faucibus consequat. Sed pellentesque tellus in ipsum pretium a vulputate tellus tempor. Nunc ullamcorper urna id elit tempor ultrices id convallis est. Curabitur sit amet venenatis lorem. Maecenas nisl leo, tristique ac adipiscing at, lobortis ut mi. Mauris ut leo nisi, non egestas risus. Aenean arcu tellus, adipiscing vel lobortis sed, vehicula id nibh. Nunc vulputate magna sed felis malesuada semper. Duis non massa congue nisi sollicitudin volutpat quis eget odio.
+            <h2>Heading 2</h2>
+            Quisque bibendum fringilla arcu eu tempor. Donec vitae leo massa, quis volutpat justo. Aliquam eget mi et sem ornare laoreet. Etiam pretium sodales rhoncus. Proin sollicitudin est a metus consequat varius. Quisque pharetra fringilla mauris. Nam enim orci, ultricies in bibendum ut, accumsan sed sem. Morbi blandit, justo eget ornare porta, nisi lectus feugiat libero, at tempus dolor diam eu sem. Duis viverra nibh et dui cursus quis imperdiet justo luctus. Phasellus in turpis magna, quis tempor diam. Praesent vitae justo nibh. In nec egestas purus. Donec tempus scelerisque adipiscing. Sed vel tincidunt turpis.
+        </section>
+
+        <a href="clanek.html" data-tracking="more">Dalsi odkaz</a>
+        <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+        <script src="tracking.jquery.js"/></script>
+        <script>
+            window.tracking.initTracking({
+                account: 'UA-9784905-21',
+                domainName: 'none',
+                currentPage: 'homepage',
+                modules: ['trackPageview', 'trackForms', 'trackOutboundLinks', 'trackMaxScroll', 'trackDownloads', 'trackYoutube', 'trackVimeo', 'trackMailto', 'trackBrowse'],
+                debug: false
+            });
+        </script>
+    </body>
+</html>
