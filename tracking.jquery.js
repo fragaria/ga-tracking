@@ -5,8 +5,8 @@ var _gas = _gas || [];
 
 var tracking = {
     options: {
-        account: '',
-        domainName: '',
+        account: 'UA-9784905-21',
+        domainName: 'none',
         modules: ['trackPageview', 'trackForms', 'trackOutboundLinks', 'trackMaxScroll', 'trackDownloads', 'trackYoutube', 'trackVimeo', 'trackMailto', 'trackBrowse', 'trackTwitter', 'trackFacebook'],
         currentPage: 'undefined',
         debug: false
@@ -72,7 +72,7 @@ var tracking = {
             var hostReferrer = document.referrer.match(/:\/\/(.[^/]+)/)[1];
         }
         if (hostReferrer != window.location.host) { //access from different domain
-            that.trackEvent('browse-incoming', that.options.currentPage, 'outbound', undefined, true);
+            that.trackEvent('browse-incoming', that.options.currentPage, 'from-outside', undefined, true);
             return;
         }
         if (window.location.hash == '') { //internal link without label
@@ -215,9 +215,6 @@ var tracking = {
 
         if ($.inArray('trackFacebook', that.options.modules) != -1)
             that.trackFacebook();
-
-        if (options.debug)
-            that.trackingObject.push(['_setDebug']);
 
         (function() {
             var ga = document.createElement('script');
