@@ -171,6 +171,9 @@ var tracking = {
                 });
             });
         }
+        else {
+            window.setTimeout(this.trackTwitter(), 100); // wait for loading Twitter JS
+        }
     },
 
     initTracking: function(options) {
