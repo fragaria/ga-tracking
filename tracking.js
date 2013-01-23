@@ -152,7 +152,6 @@ var tracking = {
                         that.trackSocialEvent('twitter', intent.type, 'tweet');
                 });
 
-
                 twttr.events.bind('retweet',  function(intent) {
                     if (intent)
                         that.trackSocialEvent('twitter', intent.type, intent.data.source_tweet_id);
@@ -224,7 +223,7 @@ var tracking = {
             ga.type = 'text/javascript';
             ga.async = true;
             ga.src = '//cdnjs.cloudflare.com/ajax/libs/gas/1.10.1/gas.min.js';
-            var s = document.getElementsByTagName('body')[0];
+            var s = document.getElementsByTagName('script')[0];
             s.parentNode.insertBefore(ga, s);
         })();
     }
@@ -233,3 +232,5 @@ var tracking = {
 window.tracking = tracking;
 
 }).call(this);
+
+window.trackingInit();

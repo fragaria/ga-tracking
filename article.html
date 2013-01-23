@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <meta charset="utf-8"/>
+        <title>GA Tracking test site - Homepage</title>
+        <script src="http://code.jquery.com/jquery-1.9.0.js"></script>
+        <script>
+            window.trackingInit = function() {
+                window.tracking.initTracking({
+                    account: 'UA-9784905-21',
+                    domainName: 'none',
+                    currentPage: 'article',
+                    modules: ['trackPageview', 'trackForms', 'trackOutboundLinks', 'trackMaxScroll', 'trackDownloads', 'trackYoutube', 'trackVimeo', 'trackMailto', 'trackBrowse'],
+                    debug: true
+                });
+            };
+            (function() {
+                var ga = document.createElement('script');
+                ga.type = 'text/javascript';
+                ga.async = true;
+                ga.src = 'tracking.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(ga, s);
+                window.tracking = {};
+            })();
+        </script>
+    </head>
+    <body>
+        <div role="banner" data-tracking="logo">
+            <a href="index.html">Logo</a>
+        </div>
+
+        <nav data-tracking="navigation">
+            <ul>
+                <li><a href="article.html">Item 1</a></li>
+                <li><a href="article.html">Item 2</a></li>
+                <li><a href="article.html">Item 3</a></li>
+                <li><a href="article.html">Item 4</a></li>
+                <li><a href="article.html">Item 5</a></li>
+                <li><a href="article.html">Item 6</a></li>
+            </ul>
+        </nav>
+
+        <div id="main">
+
+            <section data-tracking="content">
+                <h1>Title of Article</h1>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a cursus felis. Cras egestas pharetra est id imperdiet. Nulla varius libero vel felis iaculis vitae placerat tortor cursus. Sed vitae ligula nec eros pulvinar gravida vitae vel est. Aenean aliquet posuere vulputate. Donec ligula sem, vestibulum id dapibus a, lobortis nec ante. Nam sapien sapien, condimentum et varius a, rhoncus et felis. Sed arcu nulla, congue non convallis a, mollis a felis. Pellentesque orci massa, accumsan id aliquam quis, consequat non justo. Etiam eu tortor nec ligula aliquet hendrerit sed a mi. Cras sollicitudin vehicula fringilla. Duis id dui vitae dolor luctus faucibus eu non ipsum.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a cursus felis. Cras egestas pharetra est id imperdiet. Nulla varius libero vel felis iaculis vitae placerat tortor cursus. Sed vitae ligula nec eros pulvinar gravida vitae vel est. Aenean aliquet posuere vulputate. Donec ligula sem, vestibulum id dapibus a, lobortis nec ante. Nam sapien sapien, condimentum et varius a, rhoncus et felis. Sed arcu nulla, congue non convallis a, mollis a felis. Pellentesque orci massa, accumsan id aliquam quis, consequat non justo. Etiam eu tortor nec ligula aliquet hendrerit sed a mi. Cras sollicitudin vehicula fringilla. Duis id dui vitae dolor luctus faucibus eu non ipsum.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a cursus felis. Cras egestas pharetra est id imperdiet. Nulla varius libero vel felis iaculis vitae placerat tortor cursus. Sed vitae ligula nec eros pulvinar gravida vitae vel est. Aenean aliquet posuere vulputate. Donec ligula sem, vestibulum id dapibus a, lobortis nec ante. Nam sapien sapien, condimentum et varius a, rhoncus et felis. Sed arcu nulla, congue non convallis a, mollis a felis. Pellentesque orci massa, accumsan id aliquam quis, consequat non justo. Etiam eu tortor nec ligula aliquet hendrerit sed a mi. Cras sollicitudin vehicula fringilla. Duis id dui vitae dolor luctus faucibus eu non ipsum.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a cursus felis. Cras egestas pharetra est id imperdiet. Nulla varius libero vel felis iaculis vitae placerat tortor cursus. Sed vitae ligula nec eros pulvinar gravida vitae vel est. Aenean aliquet posuere vulputate. Donec ligula sem, vestibulum id dapibus a, lobortis nec ante. Nam sapien sapien, condimentum et varius a, rhoncus et felis. Sed arcu nulla, congue non convallis a, mollis a felis. Pellentesque orci massa, accumsan id aliquam quis, consequat non justo. Etiam eu tortor nec ligula aliquet hendrerit sed a mi. Cras sollicitudin vehicula fringilla. Duis id dui vitae dolor luctus faucibus eu non ipsum.</p>
+
+            </section>
+
+            <aside data-tracking="right-panel">
+                <h1><a href="article.html">About</a></h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce condimentum facilisis tortor, gravida ornare ligula fermentum ac. Duis congue augue non libero posuere volutpat. Proin interdum erat id lorem rutrum interdum nec eu urna. Aenean quis sollicitudin leo. In gravida augue in odio tincidunt cursus pellentesque orci hendrerit. Sed mattis risus sit amet orci dictum vitae euismod felis fringilla. In sit amet ante et orci tempor tempor ac ac lectus. Pellentesque ut dolor lectus.
+                </p>
+                <p><a href="article.html">More</a></p>
+            </aside>
+
+        </div>
+
+        <footer data-tracking="footer">
+            <ul>
+                <li><a href="index.html">Homepage</a></li>
+                <li><a href="article.html">Article</a></li>
+            </ul>
+        </footer>
+    </body>
+</html>
