@@ -10,7 +10,7 @@
                     account: 'UA-9784905-21',
                     domainName: 'none',
                     currentPage: 'article',
-                    modules: ['trackPageview', 'trackForms', 'trackOutboundLinks', 'trackMaxScroll', 'trackDownloads', 'trackYoutube', 'trackVimeo', 'trackMailto', 'trackBrowse'],
+                    modules: ['trackPageview', 'trackForms', 'trackOutboundLinks', 'trackMaxScroll', 'trackDownloads', 'trackYoutube', 'trackVimeo', 'trackMailto', 'trackBrowse', 'trackFacebook', 'trackTwitter'],
                     debug: true
                 });
             };
@@ -43,7 +43,7 @@
 
         <div id="main">
 
-            <section data-tracking="content">
+            <article data-tracking="content">
                 <h1>Title of Article</h1>
 
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a cursus felis. Cras egestas pharetra est id imperdiet. Nulla varius libero vel felis iaculis vitae placerat tortor cursus. Sed vitae ligula nec eros pulvinar gravida vitae vel est. Aenean aliquet posuere vulputate. Donec ligula sem, vestibulum id dapibus a, lobortis nec ante. Nam sapien sapien, condimentum et varius a, rhoncus et felis. Sed arcu nulla, congue non convallis a, mollis a felis. Pellentesque orci massa, accumsan id aliquam quis, consequat non justo. Etiam eu tortor nec ligula aliquet hendrerit sed a mi. Cras sollicitudin vehicula fringilla. Duis id dui vitae dolor luctus faucibus eu non ipsum.</p>
@@ -51,7 +51,51 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a cursus felis. Cras egestas pharetra est id imperdiet. Nulla varius libero vel felis iaculis vitae placerat tortor cursus. Sed vitae ligula nec eros pulvinar gravida vitae vel est. Aenean aliquet posuere vulputate. Donec ligula sem, vestibulum id dapibus a, lobortis nec ante. Nam sapien sapien, condimentum et varius a, rhoncus et felis. Sed arcu nulla, congue non convallis a, mollis a felis. Pellentesque orci massa, accumsan id aliquam quis, consequat non justo. Etiam eu tortor nec ligula aliquet hendrerit sed a mi. Cras sollicitudin vehicula fringilla. Duis id dui vitae dolor luctus faucibus eu non ipsum.</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a cursus felis. Cras egestas pharetra est id imperdiet. Nulla varius libero vel felis iaculis vitae placerat tortor cursus. Sed vitae ligula nec eros pulvinar gravida vitae vel est. Aenean aliquet posuere vulputate. Donec ligula sem, vestibulum id dapibus a, lobortis nec ante. Nam sapien sapien, condimentum et varius a, rhoncus et felis. Sed arcu nulla, congue non convallis a, mollis a felis. Pellentesque orci massa, accumsan id aliquam quis, consequat non justo. Etiam eu tortor nec ligula aliquet hendrerit sed a mi. Cras sollicitudin vehicula fringilla. Duis id dui vitae dolor luctus faucibus eu non ipsum.</p>
 
-            </section>
+            </article>
+
+            <div>
+                <div id="fb-root"></div>
+                <script>(function(d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s); js.id = id;
+                    js.src = "//connect.facebook.net/cs_CZ/all.js#xfbml=1";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));</script>
+                <div class="fb-like" data-href="https://github.com/fragaria/ga-tracking" data-send="false" data-layout="box_count" data-width="100" data-show-faces="false"></div>
+
+                <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://github.com/fragaria/ga-tracking" data-via="your_screen_name" data-lang="en" data-related="anywhereTheJavascriptAPI" data-count="vertical">Tweet</a>
+                <script>
+
+                    window.twttr = (function (d, s, id) {
+
+                        var t, js, fjs = d.getElementsByTagName(s)[0];
+
+                        if (d.getElementById(id)) return;
+                        js = d.createElement(s);
+                        js.id = id;
+
+                        js.src = "//platform.twitter.com/widgets.js";
+                        fjs.parentNode.insertBefore(js, fjs);
+
+                        return window.twttr || (t = { _e:[], ready:function (f) {
+                            t._e.push(f)
+                        } });
+
+                    }(document, "script", "twitter-wjs"));
+
+                </script>
+
+                <div class="g-plusone" data-size="tall" data-href="https://github.com/fragaria/ga-tracking"></div>
+                <script>
+                    (function() {
+                        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                        po.src = 'https://apis.google.com/js/plusone.js';
+                        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+                    })();
+                </script>
+
+            </div>
 
             <aside data-tracking="right-panel">
                 <h1><a href="article.html">About</a></h1>

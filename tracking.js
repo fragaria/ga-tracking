@@ -115,7 +115,7 @@ var tracking = {
     trackFacebook: function() {
         var that = this;
 
-        if (typeof FB !== 'undefined') {
+        window.fbAsyncInit = function() {
             FB.Event.subscribe('edge.create', function(targetUrl) {
                 that.trackSocialEvent('facebook', 'like', targetUrl);
             });
@@ -131,48 +131,40 @@ var tracking = {
             FB.Event.subscribe('comment.remove', function(targetUrl) {
                 that.trackSocialEvent('facebook', 'remove-comment', targetUrl);
             });
-        }
-        else {
-            window.setTimeout(this.trackFacebook(), 100); // wait for loading Facebook JS
-        }
+        };
     },
 
     trackTwitter: function() {
         var that = this;
 
-        if (typeof twttr !== 'undefined') {
-            twttr.ready(function (twttr) {
-                twttr.events.bind('click', function(intent) {
-                    if (intent)
-                        that.trackSocialEvent('twitter', intent.type, intent.region);
-                });
-
-                twttr.events.bind('tweet', function(intent) {
-                    if (intent)
-                        that.trackSocialEvent('twitter', intent.type, 'tweet');
-                });
-
-                twttr.events.bind('retweet',  function(intent) {
-                    if (intent)
-                        that.trackSocialEvent('twitter', intent.type, intent.data.source_tweet_id);
-                });
-
-                twttr.events.bind('favorite', function(intent) {
-                    if (intent)
-                        that.trackSocialEvent('twitter', intent.type, 'tweet');
-                });
-
-                twttr.events.bind('follow', function(intent) {
-                    if (intent) {
-                        var label = intent.data.user_id + " (" + intent.data.screen_name + ")";
-                        that.trackSocialEvent('twitter', intent.type, label);
-                    }
-                });
+        twttr.ready(function (twttr) {
+            twttr.events.bind('click', function(intent) {
+                if (intent)
+                    that.trackSocialEvent('twitter', intent.type, intent.region);
             });
-        }
-        else {
-            window.setTimeout(this.trackTwitter(), 100); // wait for loading Twitter JS
-        }
+
+            twttr.events.bind('tweet', function(intent) {
+                if (intent)
+                    that.trackSocialEvent('twitter', intent.type, 'tweet');
+            });
+
+            twttr.events.bind('retweet',  function(intent) {
+                if (intent)
+                    that.trackSocialEvent('twitter', intent.type, intent.data.source_tweet_id);
+            });
+
+            twttr.events.bind('favorite', function(intent) {
+                if (intent)
+                    that.trackSocialEvent('twitter', intent.type, 'tweet');
+            });
+
+            twttr.events.bind('follow', function(intent) {
+                if (intent) {
+                    var label = intent.data.user_id + " (" + intent.data.screen_name + ")";
+                    that.trackSocialEvent('twitter', intent.type, label);
+                }
+            });
+        });
     },
 
     initTracking: function(options) {
